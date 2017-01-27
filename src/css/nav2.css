@@ -1,0 +1,215 @@
+nav.nav_menu{
+  position: fixed;
+  border: 0px;
+  width: 100%;
+  z-index: 50;
+  top: 0;
+
+}
+a, a:hover, a:active{
+  text-decoration: none;
+  color: #ffffff;
+}
+a.nav_title{
+  color: rgba(255, 255, 255, 0.95); /*rgba(255, 110, 0, 0.901961);*/
+  text-decoration: none;
+   text-align: center;
+font-weight: bold;
+font-size: 22px;
+
+}
+
+div.nvtc_poss{
+  margin-left: 2px;
+    display: inline-block;
+    transform: translateY(-50%);
+}
+div.nvt_container{
+
+
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
+   background: rgba(55, 57, 55, 0.6);
+    border-radius: 10%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    -webkit-animation:an_menu1 10s infinite ;
+}
+
+
+
+/*DESDE ACA va el EXPANSOR BOTON O CHECKBOX*/
+label.expansor{
+  transform: translateX(-31px);
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 1px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
+  background: rgba(55, 57, 55, 0.6);
+  border-radius: 20%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+
+
+}
+
+label.expansor:active, .expansor:hover, .expansor:focus{
+  transform: translateX(0px);
+  box-shadow: transparent;
+  border-radius: 50%;
+  outline: none; /*para botones mmvgs al fin sin linea*/
+
+}
+
+label.expansor:active, .expansor:hover, .expansor:focus {
+
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 4px;
+  background: rgba(55, 57, 55, 0.901961);
+  border: 2px solid rgba(255, 255, 255, 0.99);
+}
+
+label.expansor, .expansor svg,
+.expansor path, .expansor line,
+.expansor polyline {
+  /*stroke: rgba(255, 110, 0, 0.901961);
+  fill:rgba(255, 110, 0, 0.901961);
+  -webkit-animation:bn_menu 4s infinite ;
+  -webkit-animation-delay:10s;*/
+
+}
+.expansor svg{
+  -webkit-animation: nav-logo-ro infinite 20s linear;
+
+}
+
+.expansor.active{
+  /*-webkit-animation:bn_menu 4s infinite ;*/
+}
+.expansor input[type=checkbox] {
+  display: none;
+}
+
+/*HASTA ACA EL EXPANSOR*/
+
+#nav_expansor li {
+display: inline-block;
+ margin-left: 3px;
+  margin-right: 3px;
+  background: rgba(55, 57, 55, 0.901961);
+  border-radius:25%;
+  border: 3px solid rgba(37, 39, 37, 0.3);
+  z-index: 1;
+}
+
+#nav_expansor span{
+/*  display: none;*/
+background: rgba(55, 57, 55, 0.901961);
+border-radius: 10%;
+border: 3px solid rgba(37, 39, 37, 0.3);
+}
+
+#nav_expansor div{
+
+  -webkit-animation:an_menu 10s infinite ;
+    -moz-animation:an_menu 20s infinite ;
+    -o-animation:an_menu 20s infinite ;
+/*
+transform: perspective(300px) rotateY(-30deg) rotateX(20deg);
+/*  transform: perspective(0px) rotateY(0deg);*/
+}
+
+
+
+@media (max-width:768px) {
+  #nav_expansor {
+  }
+
+
+  #nav_expansor li {
+    border-radius:50%;
+  }
+  #nav_expansor span{
+    display: none;
+  }
+  label.expansor{
+    border-radius: 50%;
+  }
+}
+@media (max-width:350px){
+  #nav_expansor svg {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+
+.icon_menu1{
+  animation-name: move-left-right;
+    animation-duration: 5s;
+     animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-delay:1s;
+
+}
+
+@keyframes nav-logo-ro {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bn_menu {
+    0% {border-color:rgba(255, 255, 255, 0.99)  ; stroke: rgba(255, 255, 255, 0.99) ; fill:rgba(255, 255, 255, 0.99) ;}
+    25% {border-color:rgba(255, 206, 168, 0.99) ; stroke: rgba(255, 206, 168, 0.95) ; fill:rgba(255, 206, 168, 0.95) ;}
+    50% {border-color:rgba(255, 128, 31, 0.99) ; stroke: rgba(255, 128, 31, 0.97); fill:rgba(255, 128, 31, 0.97) ;}
+    75% {border-color:rgba(255, 206, 168, 0.99) ; stroke: rgba(255, 206, 168, 0.95) ; fill:rgba(255, 206, 168, 0.95) ;}
+    100% {border-color:rgba(255, 255, 255, 0.99) ; stroke: rgba(255, 255, 255, 0.99) ; fill:rgba(255, 255, 255, 0.99) ;}
+
+}
+
+
+@-webkit-keyframes an_menu1{ /* Safari and Chrome */
+    0%  {transform: perspective(0px)    rotateY(0deg)   rotateX(0deg) ; transition: ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
+       background: rgba(55, 57, 55, 0.6);
+        border: 2px solid rgba(255, 255, 255, 0.7);  }
+	  10% {transform: perspective(300px)  rotateY(-10deg) rotateX(10deg); transition: ease-in-out;}
+	  25% {transform: perspective(250px)  rotateY(-20deg) rotateX(15deg); transition: ease-in-out;}
+    50% {transform: perspective(200px)  rotateY(-30deg) rotateX(20deg); transition: ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 4px;
+      background: rgba(55, 57, 55, 0.901961);
+      border: 2px solid rgba(255, 255, 255, 0.99);}
+	  75% {transform: perspective(250px)  rotateY(-20deg) rotateX(15deg); transition: ease-in-out;}
+	  90% {transform: perspective(300px)  rotateY(-10deg) rotateX(10deg); transition: ease-in-out;}
+    100%{transform: perspective(0px)    rotateY(0deg)   rotateX(0deg);  transition: ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
+       background: rgba(55, 57, 55, 0.6);
+        border: 2px solid rgba(255, 255, 255, 0.7);  }
+}
+
+@-webkit-keyframes an_menu{ /* Safari and Chrome */
+    0%  {transform: perspective(0px)    rotateY(0deg)   rotateX(0deg) ; transition: ease-in-out;}
+	  10% {transform: perspective(300px)  rotateY(-10deg) rotateX(10deg); transition: ease-in-out;}
+	  25% {transform: perspective(250px)  rotateY(-20deg) rotateX(15deg); transition: ease-in-out;}
+    50% {transform: perspective(200px)  rotateY(-30deg) rotateX(20deg); transition: ease-in-out;}
+	  75% {transform: perspective(250px)  rotateY(-20deg) rotateX(15deg); transition: ease-in-out;}
+	  90% {transform: perspective(300px)  rotateY(-10deg) rotateX(10deg); transition: ease-in-out;}
+    100%{transform: perspective(0px)    rotateY(0deg)   rotateX(0deg);  transition: ease-in-out;
+    }
+}
+@-moz-keyframes an_menu { /* Firefox */
+    0%  {transform: perspective(0px) rotateY(0deg);}
+	10%   {transform: perspective(400px) rotateY(2deg);}
+	25%   {transform: perspective(300px) rotateY(5deg);}
+    50%  {transform: perspective(250px) rotateY(8deg);}
+	75%  {transform: perspective(300px) rotateY(5deg);}
+	90%  {transform: perspective(400px) rotateY(2deg);}
+    100%   {transform: perspective(0px) rotateY(0deg);}
+}
+@-o-keyframes an_menu {/* opera */
+    0%  {transform: perspective(0px) rotateY(0deg);}
+	10%   {transform: perspective(400px) rotateY(2deg);}
+	25%   {transform: perspective(300px) rotateY(5deg);}
+    50%  {transform: perspective(250px) rotateY(8deg);}
+	75%  {transform: perspective(300px) rotateY(5deg);}
+	90%  {transform: perspective(400px) rotateY(2deg);}
+    100%   {transform: perspective(0px) rotateY(0deg);}
+}

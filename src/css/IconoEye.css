@@ -1,0 +1,13 @@
+
+svg.mov{
+  width: 100%; /*   background: #E91E63; */
+  height: 100%;
+}
+path, line, polyline {
+  stroke: #fff;
+  stroke-width: 0.4px;
+}
+
+.mov path {
+  fill: transparent;
+}
